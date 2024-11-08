@@ -25,8 +25,10 @@ async function run() {
       if (result === "granted") {
         const subscription = await registration.pushManager.subscribe({
           // TODO: Replace with your public vapid key
+          // applicationServerKey:
+          //   "BNjCpEWm_Oh2kx8fgpRN1C7hM7whS8r3_bTabCI27k0VTwm_GSnXaA5MZF-lZg1Hr3lAfTKkd4XUnqCsumEKo8Y",
           applicationServerKey:
-            "BNjCpEWm_Oh2kx8fgpRN1C7hM7whS8r3_bTabCI27k0VTwm_GSnXaA5MZF-lZg1Hr3lAfTKkd4XUnqCsumEKo8Y",
+            "BFygpPBmFuCSAXq1UDxA-LNBM2gzYHbp6Xld16N0xXp962u7oVu4BMG0qoafzHXFR43aAJi51JpmboG5v8idtbQ",
           userVisibleOnly: true,
         });
 
