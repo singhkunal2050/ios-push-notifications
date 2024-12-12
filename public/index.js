@@ -23,20 +23,20 @@ async function run() {
 
       // If the user rejects the permission result will be "denied"
       if (result === "granted") {
-        const subscription = await registration.pushManager.subscribe({
-          // TODO: Replace with your public vapid key
+        const subscriptionData = {
           applicationServerKey:
             "BNjCpEWm_Oh2kx8fgpRN1C7hM7whS8r3_bTabCI27k0VTwm_GSnXaA5MZF-lZg1Hr3lAfTKkd4XUnqCsumEKo8Y",
-          // applicationServerKey:
-          //   "BFygpPBmFuCSAXq1UDxA-LNBM2gzYHbp6Xld16N0xXp962u7oVu4BMG0qoafzHXFR43aAJi51JpmboG5v8idtbQ",
           userVisibleOnly: true,
-        });
+        };
+        const subscription = await registration.pushManager.subscribe(
+          subscriptionData
+        );
 
         await fetch("/save-subscription", {
           method: "post",
           headers: {
             "Content-Type": "application/json",
-          },
+          },  
           body: JSON.stringify(subscription),
         });
 
